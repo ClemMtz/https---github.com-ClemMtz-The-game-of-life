@@ -1,0 +1,15 @@
+:root {
+  --interaction-color: #dff30a;
+  --background: rgb(21, 7, 17);
+  --text-color: rgb(8, 107, 8);
+  --title-color: #ff6404;
+}
+
+* {
+  font-family: 'Orbitron', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
