@@ -5,14 +5,25 @@ import { BsQuestionLg } from 'react-icons/bs';
 import { useGlobalContext } from './context';
 
 function App() {
- const {showRules,openRules, startGame, backToStartScreen} = useGlobalContext();
+  const { showRules, openRules, startGame, backToStartScreen } = useGlobalContext();
 
 
   return (
     <>
-      <Rules/>
-      <Home/>
-      <Start/>
+      {
+        startGame ?
+
+          <div>
+            <div className='icons'>
+              <div className='icon1'><BsQuestionLg onClick={openRules} /></div>
+              <div><RxCross1 onClick={backToStartScreen} className='icon2' /></div>
+            </div>
+            {showRules && <Rules />}
+            <Home />
+          </div>
+          :
+          <Start />
+      }
     </>
   )
 }

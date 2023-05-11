@@ -3,9 +3,9 @@ import { Grid, Buttons } from './index';
 
 const Home = () => {
   return (
-    <div>
-      <Grid/>
-      <Buttons/>
+    <div className='flex-column flex-row center'>
+      <Grid />
+      <Buttons />
     </div>
   )
 }

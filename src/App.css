@@ -13,3 +13,39 @@
   padding: 0;
   text-decoration: none;
 }
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.startScreen-wrapper {
+  background-image: url('assets/arcade-wallpaper.jpg');
+  background-size: cover no-repeat center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.startScreen-title {
+  color: var(--title-color);
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+.startScreen-btn {
+  height: 4rem;
+  width: 12rem;
+  border: none;
+  background: var(--interaction-color);
+  color: var(--text-color);
+  font-size: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: green 3px 5px;
+}
