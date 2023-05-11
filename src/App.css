@@ -14,6 +14,11 @@
   text-decoration: none;
 }
 
+body {
+  background: var(--background);
+  overflow: hidden;
+}
+
 .center {
   justify-content: center;
   align-items: center;
@@ -89,4 +94,38 @@ input:invalid {
   width: 100%;
   display: inline-flex;
   flex-wrap: wrap;
+}
+
+.hidden {
+  position: relative;
+  display: flex;
+  height: 19px;
+  justify-content: center;
+  background: var(--background);
+  margin-top: -1.1rem;
+
+}
+
+.hidden2 {
+  position: relative;
+  display: flex;
+  height: 19px;
+  justify-content: center;
+  background: rgb(4, 2, 3);
+  margin-top: -1.1rem;
+  z-index: 0;
+}
+
+.error {
+  position: absolute;
+  width: 24rem;
+  height: 2.7rem;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  background: red;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
 }

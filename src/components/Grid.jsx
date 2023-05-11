@@ -11,6 +11,7 @@ const Grid = () => {
     setNewGridSize,
     maxValue,
     setMaxValue,
+    minValue,
     dimensions,
     setDimensions,
     error,
@@ -27,6 +28,9 @@ const Grid = () => {
     if (inputRef.current.value > inputRef.current.max) {
       setError(true);
       setGridSize(maxValue);
+    } else if (inputRef.current.value < inputRef.current.min) {
+      setError(true);
+      setGridSize(minValue);
     } else {
       setGridSize(newGridSize);
       setError(false)
@@ -57,7 +61,7 @@ const Grid = () => {
       </div>
       <div>{error && <Error />}</div>
       <div>
-        <input type="number" value={newGridSize} onChange={(e) => setNewGridSize(parseInt(e.target.value))} min='300' max={maxValue} ref={inputRef} />
+        <input type="number" value={newGridSize} onChange={(e) => setNewGridSize(parseInt(e.target.value))} min={minValue} max={maxValue} ref={inputRef} />
         <button className='button buttonBS margin-left' onClick={handleResizeClick}>Resize Grid</button>
       </div>
     </div>

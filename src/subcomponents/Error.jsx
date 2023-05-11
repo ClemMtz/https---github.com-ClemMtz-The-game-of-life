@@ -1,10 +1,21 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../context';
 
+
 const Error = () => {
-    const{error, setError, maxValue} = useGlobalContext();
+  const { error, setError, maxValue, minValue, } = useGlobalContext();
+  console.log(minValue)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setError(false)
+    }, 4000)
+    return () => clearTimeout(timeout)
+  }, [error]);
+
+
   return (
-    <div>Error</div>
+    <p className='error'>Value must be more than or equal to {minValue} less or equal than {maxValue}</p>
   )
 }
 
