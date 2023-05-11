@@ -158,3 +158,44 @@ input:invalid {
   font-size: 30px;
   cursor: pointer;
 }
+
+.rules-wrapper {
+  display: flex;
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+  height: 110vh;
+  background: rgba(0, 0, 0, 0.734);
+  z-index: 1;
+}
+
+.rules {
+  width: 22rem;
+  height: 36rem;
+  border-radius: 20px;
+}
+
+.close-rules {
+  color: var(--interaction-color);
+  margin-top: 1rem;
+  margin-left: 19rem;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+
+.rules-title {
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.rules-instrucutons {
+  color: var(--text-color);
+  margin-top: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.5rem;
+}
