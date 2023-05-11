@@ -24,7 +24,6 @@
   flex-direction: column;
 }
 
-
 .startScreen-wrapper {
   background-image: url('assets/arcade-wallpaper.jpg');
   background-size: cover no-repeat center;
@@ -48,4 +47,46 @@
   border-radius: 10px;
   cursor: pointer;
   box-shadow: green 3px 5px;
+}
+
+.grid-wrapper {
+  align-items: center;
+  margin-bottom: 0.5rem;
+
+}
+
+.row {
+  display: flex;
+  width: 10px;
+  height: 10px;
+}
+
+input[type="number"] {
+  width: 50px;
+  font-size: 1rem;
+  margin-top: 6rem;
+  background: var(--background);
+  color: var(--text-color);
+}
+
+input:invalid {
+  outline: 2px solid red;
+}
+
+.inactive {
+  background: #616161;
+}
+
+.active {
+  background: var(--interaction-color);
+}
+
+.tile {
+  border: 1px solid #AAAAAA;
+}
+
+.tiles {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
 }
