@@ -199,3 +199,104 @@ input:invalid {
   padding-right: 0.5rem;
   font-size: 1.5rem;
 }
+
+@media screen and (max-width:400px) {
+  .button {
+    margin-left: 0.5rem
+  }
+
+  .startScreen-title {
+    font-size: 3rem;
+  }
+
+  .icons {
+    margin-bottom: 4rem;
+    margin-left: 75vw;
+  }
+}
+
+@media screen and (min-width: 521px) {
+
+  .icons {
+    width: 70px;
+    margin-left: 80vw;
+    gap: 0.7rem;
+
+  }
+}
+
+@media screen and (min-width: 700px) {
+
+  .icons {
+    width: 80px;
+    margin-left: 86vw;
+    gap: 1rem;
+  }
+
+}
+
+@media screen and (min-width:900px) {
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    height: 88vh;
+    gap: 2rem;
+
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12rem;
+
+  }
+
+  .buttonBS {
+    height: 3rem;
+    width: 10rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+  }
+
+  input[type="number"] {
+    width: 70px;
+    height: 30px;
+    font-size: 1.4rem;
+  }
+
+  .error {
+    left: 42.7%;
+    top: 45%;
+  }
+
+}
+
+@media screen and (min-width: 1220px) {
+
+  .icons {
+    width: 90px;
+    margin-left: 91vw;
+    gap: 2rem;
+  }
+
+  .startScreen-btn:hover {
+    width: 16rem;
+    color: var(--title-color);
+  }
+
+  .button:hover {
+    opacity: 0.5;
+  }
+
+  .icon1:hover {
+    color: green;
+  }
+
+  .icon2:hover {
+    color: green;
+  }
+
+  .close-rules:hover {
+    color: green;
+  }
+}
