@@ -19,7 +19,8 @@ const AppProvider = ({ children }) => {
    const [nextBtnClicked, setNextBtnClicked] = useState(false);
    const [playing, setPlaying] = useState(false);
    const ref = useRef(false);
-   const inputRef = useRef('');
+   const inputHeight = useRef('');
+   const inputWidth = useRef('');
    const running = useRef(false);
    const startBtn = useRef();
    const [isHover, setIsHover] = useState(false);
@@ -76,7 +77,8 @@ const AppProvider = ({ children }) => {
          playing,
          setPlaying,
          ref,
-         inputRef,
+         inputWidth,
+         inputHeight,
          running,
          startBtn,
          isHover,

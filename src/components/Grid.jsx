@@ -22,19 +22,26 @@ const Grid = () => {
     setError,
     showRules,
     ref,
-    inputRef
+    inputHeight,
+    inputWidth
   } = useGlobalContext();
-
+  console.log(inputWidth)
 
   const handleResizeClick = (e) => {
     e.preventDefault();
 
-    if (inputRef.current.value > inputRef.current.max) {
+    if (inputHeight.current.value > inputHeight.current.max) {
       setError(true);
-      setGridSize(maxValue);
-    } else if (inputRef.current.value < inputRef.current.min) {
+      setGridSizeHeight(maxValue);
+    } else if (inputHeight.current.value < inputHeight.current.min) {
       setError(true);
-      setGridSize(minValue);
+      setGridSizeHeight(minValue);
+    } else if (inputWidth.current.value > inputWidth.current.max) {
+      setError(true);
+      setGridSizeWidth(maxValue);
+    } else if (inputWidth.current.value < inputWidth.current.min) {
+      setError(true);
+      setGridSizeWidth(minValue);
     } else {
       setGridSizeWidth(newGridSizeWidth);
       setGridSizeHeight(newGridSizeHeight)
@@ -65,12 +72,13 @@ const Grid = () => {
         <div className={`${showRules ? 'hidden2' : 'hidden'}`} />
       </div>
       <div>{error && <Error />}</div>
-      <div>
-        <input type="number" value={newGridSizeWidth} onChange={(e) => setNewGridSizeWidth(parseInt(e.target.value))} min={minValue} max={maxValue} ref={inputRef} />
-        <input type="number" value={newGridSizeHeight} onChange={(e) => setNewGridSizeHeight(parseInt(e.target.value))} min={minValue} max={maxValue} ref={inputRef} />
-        <button className='button buttonBS margin-left' onClick={handleResizeClick}>Resize Grid</button>
+      <div className='inputs-buttonResizeGrid-container'>
+        <input className='margin inputWidth' type="number" value={newGridSizeWidth} onChange={(e) => setNewGridSizeWidth(parseInt(e.target.value))} min={minValue} max={maxValue} ref={inputWidth} />
+        <div className='multiplication-sign margin'>X</div>
+        <input className='margin inputHeight' type="number" value={newGridSizeHeight} onChange={(e) => setNewGridSizeHeight(parseInt(e.target.value))} min={minValue} max={maxValue} ref={inputHeight} />
+        <button className='button buttonBS margin' onClick={handleResizeClick}>Resize Grid</button>
       </div>
-    </div>
+    </div >
   )
 }
 
