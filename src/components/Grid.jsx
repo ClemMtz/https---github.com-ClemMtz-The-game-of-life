@@ -5,10 +5,14 @@ import { useGlobalContext } from '../context';
 
 const Grid = () => {
   const {
-    gridSize,
-    setGridSize,
-    newGridSize,
-    setNewGridSize,
+    gridSizeWidth,
+    setGridSizeWidth,
+    newGridSizeWidth,
+    setNewGridSizeWidth,
+    gridSizeHeight,
+    setGridSizeHeight,
+    newGridSizeHeight,
+    setNewGridSizeHeight,
     maxValue,
     setMaxValue,
     minValue,
@@ -32,7 +36,8 @@ const Grid = () => {
       setError(true);
       setGridSize(minValue);
     } else {
-      setGridSize(newGridSize);
+      setGridSizeWidth(newGridSizeWidth);
+      setGridSizeHeight(newGridSizeHeight)
       setError(false)
     }
   };
@@ -51,17 +56,18 @@ const Grid = () => {
     const conatinerWidth = ref.current.clientWidth - 16;
     const tileContainerDimensions = { height: containerHeight, width: conatinerWidth }
     setDimensions(tileContainerDimensions)
-  }, [gridSize]);
+  }, [gridSizeWidth, gridSizeHeight]);
 
   return (
     <div className='grid-wrapper flex-column'>
-      <div style={{ width: gridSize, height: gridSize }} ref={ref}>
+      <div style={{ width: gridSizeWidth, height: gridSizeHeight }} ref={ref}>
         <Tiles dimensions={dimensions} />
         <div className={`${showRules ? 'hidden2' : 'hidden'}`} />
       </div>
       <div>{error && <Error />}</div>
       <div>
-        <input type="number" value={newGridSize} onChange={(e) => setNewGridSize(parseInt(e.target.value))} min={minValue} max={maxValue} ref={inputRef} />
+        <input type="number" value={newGridSizeWidth} onChange={(e) => setNewGridSizeWidth(parseInt(e.target.value))} min={minValue} max={maxValue} ref={inputRef} />
+        <input type="number" value={newGridSizeHeight} onChange={(e) => setNewGridSizeHeight(parseInt(e.target.value))} min={minValue} max={maxValue} ref={inputRef} />
         <button className='button buttonBS margin-left' onClick={handleResizeClick}>Resize Grid</button>
       </div>
     </div>

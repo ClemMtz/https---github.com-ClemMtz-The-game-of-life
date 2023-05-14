@@ -4,8 +4,10 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
    const [startGame, setStartGame] = useState(false);
-   const [gridSize, setGridSize] = useState(300);
-   const [newGridSize, setNewGridSize] = useState(gridSize);
+   const [gridSizeWidth, setGridSizeWidth] = useState(300);
+   const [gridSizeHeight, setGridSizeHeight] = useState(300);
+   const [newGridSizeWidth, setNewGridSizeWidth] = useState(gridSizeWidth);
+   const [newGridSizeHeight, setNewGridSizeHeight] = useState(gridSizeHeight);
    const [maxValue, setMaxValue] = useState(0);
    const [minValue, setMinValue] = useState(300);
    const [dimensions, setDimensions] = useState({});
@@ -49,10 +51,14 @@ const AppProvider = ({ children }) => {
          setTilesArr,
          clicker,
          setClicker,
-         gridSize,
-         setGridSize,
-         newGridSize,
-         setNewGridSize,
+         gridSizeWidth,
+         setGridSizeWidth,
+         newGridSizeWidth,
+         setNewGridSizeWidth,
+         gridSizeHeight,
+         setGridSizeHeight,
+         newGridSizeHeight,
+         setNewGridSizeHeight,
          maxValue,
          minValue,
          setMaxValue,
