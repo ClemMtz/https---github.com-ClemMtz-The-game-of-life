@@ -25,7 +25,6 @@ const Grid = () => {
     inputHeight,
     inputWidth
   } = useGlobalContext();
-  console.log(inputWidth)
 
   const handleResizeClick = (e) => {
     e.preventDefault();
@@ -69,7 +68,6 @@ const Grid = () => {
     <div className='grid-wrapper flex-column'>
       <div style={{ width: gridSizeWidth, height: gridSizeHeight }} ref={ref}>
         <Tiles dimensions={dimensions} />
-        <div className={`${showRules ? 'hidden2' : 'hidden'}`} />
       </div>
       <div>{error && <Error />}</div>
       <div className='inputs-buttonResizeGrid-container'>

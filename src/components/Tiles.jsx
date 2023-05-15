@@ -5,7 +5,6 @@ const Tiles = ({ dimensions }) => {
   const {
     tilesArr,
     setTilesArr,
-    gridSize,
     clicker,
     setClicker,
     resetBtnClicked,
@@ -22,7 +21,7 @@ const Tiles = ({ dimensions }) => {
   useEffect(() => {
     const tiles = generateTiles()
     setTilesArr([...tiles])
-  }, [gridSize, numOfRows, numOfColumns]);
+  }, [numOfRows, numOfColumns]);
 
   useEffect(() => {
     resetTiles()
@@ -77,6 +76,7 @@ const Tiles = ({ dimensions }) => {
           active: false,
           key: `tile${key}`
         }
+
 
         key++
         row.push(tile)
@@ -155,25 +155,34 @@ const Tiles = ({ dimensions }) => {
     return updatedStateTiles
   };
 
+
   const toggleTile = (tile) => {
 
     tile.active = tile.active ? false : true
     setClicker(clicker ? false : true)
   };
 
+
   return (
-    <>
-      <div className="tiles centre">
-        {tilesArr.map((row) => {
-          return (
-            row.map((tile) => {
-              return <div key={tile.key} className={`tile ${tile.active ? "active" : "inactive"}`} style={{ width: tileSize + "px", height: tileSize + "px" }} onClick={() => { toggleTile(tile) }}></div>
-            })
-          )
-        })}
-      </div>
-    </>
-  )
+
+    <div className="tiles">
+      {tilesArr.map((row, rowIndex) => (
+        <div key={`row-${rowIndex}`} className="row-grid-render">
+          {row.map((tile) => (
+            <div
+              key={tile.key}
+              className={`tile ${tile.active ? "active" : "inactive"}`}
+              style={{ width: tileSize + "px", height: tileSize + "px" }}
+              onClick={() => toggleTile(tile)}
+            ></div>
+          ))}
+        </div>
+      ))}
+    </div>
+
+  );
+
+
 }
 
 export default Tiles
