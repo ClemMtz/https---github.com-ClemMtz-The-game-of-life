@@ -1,30 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Tiles from './Tiles';
 import Error from '../subcomponents/Error';
 import { useGlobalContext } from '../context';
 
 const Grid = () => {
   const {
-    gridSizeWidth,
-    setGridSizeWidth,
-    newGridSizeWidth,
-    setNewGridSizeWidth,
-    gridSizeHeight,
-    setGridSizeHeight,
-    newGridSizeHeight,
-    setNewGridSizeHeight,
     maxValue,
     setMaxValue,
     minValue,
     dimensions,
     setDimensions,
     error,
-    setError,
-    showRules,
-    ref,
-    inputHeight,
-    inputWidth
+    setError
   } = useGlobalContext();
+
+  const [gridSizeWidth, setGridSizeWidth] = useState(300);
+  const [gridSizeHeight, setGridSizeHeight] = useState(300);
+  const [newGridSizeWidth, setNewGridSizeWidth] = useState(gridSizeWidth);
+  const [newGridSizeHeight, setNewGridSizeHeight] = useState(gridSizeHeight);
+  const ref = useRef('');
+  const inputHeight = useRef('');
+  const inputWidth = useRef('');
 
   const handleResizeClick = (e) => {
     e.preventDefault();

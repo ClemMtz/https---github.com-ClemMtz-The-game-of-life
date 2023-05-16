@@ -1,8 +1,10 @@
 import React from 'react'
 import { useGlobalContext } from '../context';
+import { useState } from 'react';
 
 const Start = () => {
-  const { startPlaying, isHover, setIsHover } = useGlobalContext();
+  const { startPlaying, } = useGlobalContext();
+  const [isHover, setIsHover] = useState(false);
   return (
     <div className='startScreen-wrapper flex-column center'>
       <h1 className='startScreen-title' onMouseOver={() => setIsHover(true)} onMouseOut={() => setIsHover(false)}>Game {isHover ? <span>over</span> : <span> of Life</span>}</h1>

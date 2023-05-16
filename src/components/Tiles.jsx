@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useGlobalContext } from '../context';
 
 const Tiles = ({ dimensions }) => {
   const {
-    tilesArr,
-    setTilesArr,
-    clicker,
-    setClicker,
     resetBtnClicked,
     nextBtnClicked,
     playing,
     setPlaying,
-    running
+    running,
+    tilesArr,
+    setTilesArr
   } = useGlobalContext();
+
+  const [clicker, setClicker] = useState(false);
 
   const tileSize = 16;
   const numOfRows = Math.floor(dimensions.height / tileSize);
@@ -154,7 +154,6 @@ const Tiles = ({ dimensions }) => {
 
     return updatedStateTiles
   };
-
 
   const toggleTile = (tile) => {
 

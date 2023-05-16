@@ -4,7 +4,6 @@ import { useGlobalContext } from '../context';
 
 const Error = () => {
   const { error, setError, maxValue, minValue, } = useGlobalContext();
-  console.log(minValue)
 
   useEffect(() => {
     const timeout = setTimeout(() => {
