@@ -44,6 +44,7 @@ const Tiles = ({ dimensions }) => {
       setTilesArr([...updateTileState([...tiles])])
       await wait(300)
       setPlaying(playing === "yes" ? "no" : "yes")
+
     }
   };
 

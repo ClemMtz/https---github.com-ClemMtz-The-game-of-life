@@ -1,5 +1,6 @@
 import React from 'react'
 import { useGlobalContext } from '../context';
+import { useRef, useState } from 'react';
 
 const Buttons = () => {
   const {
@@ -12,19 +13,25 @@ const Buttons = () => {
     running,
   } = useGlobalContext();
 
+  const [startBtnText, setStartBtnText] = useState('Start');
+
+
   const resetTiles = () => {
+    setStartBtnText('Start');
     running.current = false
     setPlaying(false)
     setResetBtnClicked(resetBtnClicked ? false : true)
   };
 
   const nextBtnClick = () => {
+    setStartBtnText('Start');
     running.current = false
     setPlaying(false)
     setNextBtnClicked(nextBtnClicked ? false : true)
   };
 
   const startBtnClick = () => {
+    setStartBtnText('Stop');
     if (!running.current) {
       running.current = true
       setPlaying(true)
@@ -32,14 +39,15 @@ const Buttons = () => {
   };
 
   const stopBtnClick = () => {
-    running.current = false
+    setStartBtnText('Start');
+    running.current = false;
     setPlaying(false)
   };
 
-
+  console.log(playing)
   return (
     <div className="center btn-container flex-row">
-      <button id="start-btn" className="button buttonBS " onClick={playing ? stopBtnClick : startBtnClick}>{playing ? 'Stop' : 'Start'}</button>
+      <button id="start-btn" className="button buttonBS " onClick={playing ? stopBtnClick : startBtnClick}>{startBtnText}</button>
       <button id="next-btn" className="button margin-left buttonBS" onClick={nextBtnClick}>Next</button>
       <button id="reset-btn" className="button margin-left buttonBS" onClick={resetTiles}>Reset</button>
     </div>
