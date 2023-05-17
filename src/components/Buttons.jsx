@@ -44,7 +44,6 @@ const Buttons = () => {
     setPlaying(false)
   };
 
-  console.log(playing)
   return (
     <div className="center btn-container flex-row">
       <button id="start-btn" className="button buttonBS " onClick={playing ? stopBtnClick : startBtnClick}>{startBtnText}</button>
