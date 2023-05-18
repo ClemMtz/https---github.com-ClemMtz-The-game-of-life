@@ -209,7 +209,13 @@ input:invalid {
 
 @media screen and (max-width:400px) {
   .button {
-    margin-left: 0.5rem
+    margin-left: 0.5rem;
+    width: 5rem;
+    font-size: 0.7rem;
+  }
+
+  input[type=number] {
+    font-size: 0.9rem;
   }
 
   .startScreen-title {
